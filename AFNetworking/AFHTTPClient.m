@@ -26,6 +26,7 @@
 #import "AFHTTPRequestOperation.h"
 
 #import <Availability.h>
+#import "NetworkQueue.h"
 
 #ifdef _SYSTEMCONFIGURATION_H
 #import <netinet/in.h>
@@ -271,7 +272,7 @@ NSArray * AFQueryStringPairsFromKeyAndValue(NSString *key, id value) {
     [self startMonitoringNetworkReachability];
 #endif
 
-    self.operationQueue = [[NSOperationQueue alloc] init];
+    self.operationQueue = [NetworkQueue sharedQueue];
 	[self.operationQueue setMaxConcurrentOperationCount:NSOperationQueueDefaultMaxConcurrentOperationCount];
 
     // #ifdef included for backwards-compatibility
