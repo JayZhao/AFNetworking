@@ -273,7 +273,6 @@ NSArray * AFQueryStringPairsFromKeyAndValue(NSString *key, id value) {
 #endif
 
     self.operationQueue = [NetworkQueue sharedQueue];
-	[self.operationQueue setMaxConcurrentOperationCount:NSOperationQueueDefaultMaxConcurrentOperationCount];
 
     // #ifdef included for backwards-compatibility
 #ifdef _AFNETWORKING_ALLOW_INVALID_SSL_CERTIFICATES_
